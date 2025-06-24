@@ -1,0 +1,134 @@
+@import "reset";
+@import "animations";
+@import "navbar";
+
+// Mixins
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin animation-delay($delay) {
+	animation-delay: $delay;
+	filter: blur(15px);
+	transform: translateY(300vh);
+}
+
+// Header
+.header {
+	background-image: url(../assets/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100dvh;
+	position: relative;
+}
+.header-content {
+	height: 80%;
+	padding: 1rem;
+	color: $dark-color;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 3rem;
+
+	@media screen and (min-width: 700px) {
+		@include flex-center;
+		gap: 1.5rem;
+		margin: auto;
+		max-width: 1200px;
+		padding: 2.5rem;
+		align-items: flex-start;
+	}
+}
+.header-title {
+	font-size: 20dvw;
+	line-height: 0.8;
+	text-transform: uppercase;
+	margin-top: 2rem;
+
+	p {
+		font-family: "PlayfairDisplay";
+	}
+
+	@media screen and (min-width: 700px) {
+		font-size: 10dvw;
+		transform: none;
+		text-align: left;
+
+		:first-child {
+			font-size: 8dvw;
+		}
+	}
+}
+.header-subtitle {
+	font-size: 1rem;
+	max-width: 600px;
+	color: $secondary-color;
+
+	@media screen and (min-width: 700px) {
+		font-size: 1rem;
+	}
+}
+.cta-section {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	@media screen and (min-width: 700px) {
+		position: unset;
+		padding: 0;
+		flex-direction: row;
+		top: unset;
+	}
+}
+
+// Why Us
+.why-us {
+	background-color: $light-bg;
+	max-width: none;
+	width: 100%;
+	padding-block: 3rem;
+	padding-inline: 2rem;
+}
+.why-us-container {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 30px;
+	max-width: 1200px;
+	justify-self: center;
+	@media screen and (min-width: 700px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.reason {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+
+	.reason-icon {
+		width: 50px;
+	}
+
+	h3 {
+		font-family: "PlayfairDisplay";
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		letter-spacing: 2px;
+	}
+
+	p {
+		margin-top: 0.8rem;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		text-align: justify;
+		color: $primary-color;
+	}
+
+	@media screen and (min-width: 700px) {
+		max-width: 320px;
+	}
+}
