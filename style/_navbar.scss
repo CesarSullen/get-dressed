@@ -84,13 +84,15 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 80%;
 	height: 100vh;
 	transform: translateX(-200%);
 	padding: 1rem;
-	background-color: $bg-color;
+	background-color: $primary-color;
 	z-index: -1;
 	gap: 50px;
+	border-right: solid 1px $secondary-color;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .side-bar-links {
 	display: flex;
@@ -106,7 +108,7 @@
 	display: flex;
 	gap: 10px;
 	align-items: center;
-	color: $secondary-color;
+	color: $light-color;
 	font-size: 1.5rem;
 }
 .side-bar-social {

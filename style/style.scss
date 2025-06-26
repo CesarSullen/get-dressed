@@ -1,6 +1,7 @@
 @import "reset";
 @import "animations";
 @import "navbar";
+@import "footer";
 
 // Mixins
 @mixin flex-center {
@@ -18,14 +19,18 @@
 .header {
 	background-image: url(../assets/header.jpg);
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	background-size: contain;
+	background-position: top;
 	height: 100dvh;
-	position: relative;
+
+	/* 	@media screen and (min-width: 700px) {
+		background-position: center;
+		background-size: cover;
+	} */
 }
 .header-content {
 	height: 80%;
-	padding: 1rem;
+	padding: 2rem;
 	color: $dark-color;
 	display: flex;
 	flex-direction: column;
@@ -133,7 +138,7 @@
 	}
 }
 
-//featured dress
+// featured dress
 .featured-dress {
 	max-width: none;
 	width: 100%;
@@ -148,6 +153,7 @@
 }
 .featured-dress-img {
 	width: 100%;
+	max-width: 300px;
 
 	@media screen and (min-width: 700px) {
 		border-radius: $border-radius-general;
@@ -157,12 +163,10 @@
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	gap: 1rem;
+	background-color: $light-bg;
 
-	.section-title {
-		text-transform: unset;
-	}
 	.section-subtitle {
 		margin-top: unset;
 		margin-bottom: unset;
@@ -175,7 +179,6 @@
 	}
 
 	@media screen and (min-width: 700px) {
-		padding: 1rem;
 		text-align: justify;
 
 		.section-title {
@@ -188,4 +191,85 @@
 			max-width: 150px;
 		}
 	}
+}
+
+// preview shop
+.shop-preview-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	@media screen and (min-width: 700px) {
+		flex-direction: row;
+	}
+}
+.preview-card-img {
+	width: 100%;
+}
+.product-card-container {
+	display: flex;
+	width: 100%;
+
+	.product-card {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 3/4;
+		background-color: $light-bg;
+		border-radius: $border-radius-general;
+		overflow: hidden;
+		text-decoration: none;
+		scroll-snap-align: start;
+		border: solid 1px $primary-color;
+
+		&:hover {
+			transform: scale(1.02);
+		}
+		.product-card-title {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: $primary-color;
+			border-radius: $border-radius-rounded;
+			padding: 0.75rem;
+			margin: 0.75rem;
+			letter-spacing: 1.5px;
+			font-size: 0.9rem;
+			text-transform: capitalize;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: center;
+			color: $light-color;
+			z-index: 1;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.product-card-container {
+			gap: 15px;
+		}
+		.product-card {
+			max-width: 250px;
+		}
+	}
+}
+
+.shop-preview .btn {
+	margin-top: 1.5rem;
+
+	@media screen and (min-width: 700px) {
+		max-width: 250px;
+	}
+}
+
+.product-card-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(rgba($bg-color, 0.3), rgba($bg-color, 0.9));
+	box-shadow: 0 -15px 50px rgba($bg-color, 0.4);
+	width: 100%;
+	height: 30%;
+	z-index: 0;
 }

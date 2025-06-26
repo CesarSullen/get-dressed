@@ -63,7 +63,7 @@ $border-radius-rounded: 100px;
 }
 hr {
 	width: 100%;
-	background-color: $dark-color;
+	background-color: $light-color;
 	height: 2px;
 }
 body {
@@ -110,7 +110,7 @@ a {
 }
 section {
 	text-align: center;
-	padding: 1rem;
+	padding: 2rem;
 	max-width: 1200px;
 }
 .section-title {
@@ -132,9 +132,9 @@ section {
 }
 .card {
 	border-radius: $border-radius-general;
-	box-shadow: 0 4px 20px rgba($dark-color, 0.3);
-	background: $primary-color;
+	background: $light-bg;
 	overflow: hidden;
+	border: solid 1px $primary-color;
 
 	.card-content {
 		padding: 1rem;
@@ -145,7 +145,7 @@ section {
 
 	&:hover {
 		transform: translateY(-5px);
-		box-shadow: 0 4px 20px rgba($dark-color, 0.8);
+		box-shadow: 0 4px 20px rgba($primary-color, 0.8);
 	}
 }
 

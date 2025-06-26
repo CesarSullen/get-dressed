@@ -23,7 +23,7 @@ function toggleMenu() {
 
 links.forEach((link) =>
 	link.addEventListener("click", () => {
-		sideBar.style.transform = "translateX(-200%)";
+		sideBar.style.transform = "translateX(200%)";
 		body.style.overflowY = "auto";
 		toggleBtn.classList.toggle("toggled");
 	})
