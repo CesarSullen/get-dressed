@@ -30,12 +30,14 @@ links.forEach((link) =>
 );
 
 // Interception Observer
-const sections = document.querySelectorAll(".fade-in");
+const sections = document.querySelectorAll(
+	".fade-in, .rotate-in, .zoom-up, .blur-out"
+);
 
 const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry) => {
-			entry.target.classList.toggle("show", entry.isIntersecting);
+			entry.target.classList.toggle("animated", entry.isIntersecting);
 			if (entry.isIntersecting) {
 				observer.unobserve(entry.target);
 			}
